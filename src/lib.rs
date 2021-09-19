@@ -38,7 +38,7 @@ mod graph {
         edge_collect: Vec<Vec<Option<Edge<Te>>>>,
     }
 
-    impl <Tv, Te> GraphMatrix<Tv, Te> {
+    impl <Tv, Te: Copy> GraphMatrix<Tv, Te>{
         pub fn new() -> GraphMatrix<Tv, Te> {
             GraphMatrix {
                 vertex_collect: Vec::new(),
@@ -46,12 +46,45 @@ mod graph {
             }
         }
 
-        pub fn insert_vertex(&mut self, data: Tv) {
+        pub fn add_vertex(&mut self, data: Tv) {
             for head in self.edge_collect.iter_mut() {
                 head.push(None);
             }
 
+            self.edge_collect.push(vec![None]);
+
             self.vertex_collect.push(Vertex::new(data));
+        }
+
+        pub fn insert_edge(&mut self, i: usize, j: usize, edge: Edge<Te>) -> Result<(), String> {
+            if !self.edge_valid(i, j) {
+                return Err(format!("V = ({}, {}) is not valid", i, j));
+            }
+
+            if self.edge_exist(i, j) {
+                return Err(format!("E = ({}, {}) is already exist", i, j));
+            }
+
+            self.edge_collect[i][j] = Some(edge);
+
+            return Ok(())
+        }
+
+        fn edge_exist(&self, i: usize, j: usize) -> bool {
+            match self.edge_collect[i][j] {
+                None => false,
+                Some(_) => true,
+            }
+        }
+
+        fn edge_valid(&self, i: usize, j: usize) -> bool {
+            match self.edge_collect.get(i) {
+                None => false,
+                Some(inner) => match inner.get(j) {
+                    None => false,
+                    Some(_) => true,
+                },
+            }
         }
     }
 }
@@ -81,6 +114,25 @@ mod tests {
     fn test_new_graph_matrix() {
         let mut graph: GraphMatrix<i32, usize> = GraphMatrix::new();
 
-        graph.insert_vertex(10);
+        graph.add_vertex(10);
+    }
+
+    #[test]
+    fn test_insert_edge() {
+        let mut graph = GraphMatrix::new();
+
+        // insert vertex
+        graph.add_vertex(10);
+
+        match graph.insert_edge(0, 1, Edge::new(1, 1)) {
+            Ok(_) => panic!("No error return when accessing not exist edge"),
+            Err(_) => (),
+        }
+
+        graph.add_vertex(10);
+        match graph.insert_edge(0, 1, Edge::new(1, 1)) {
+            Ok(_) => (),
+            Err(e) => panic!("fail to insert edge: {}", e),
+        }
     }
 }
