@@ -14,6 +14,7 @@ mod graph {
         }
     }
 
+    // Edge contains data and weight for each connected vertex
     pub struct Edge<T> {
         data: T,
         weight: u64,
