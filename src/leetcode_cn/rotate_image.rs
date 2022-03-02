@@ -1,5 +1,6 @@
 #[allow(dead_code)]
 struct RotateImage();
+
 impl RotateImage {
     #[allow(dead_code)]
     pub fn rotate(matrix: &mut Vec<Vec<i32>>) {
