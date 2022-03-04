@@ -23,3 +23,7 @@ fn test() {
 
 echo "$TEMPLATE" > ./src/leetcode_cn/$FILE_NAME.rs
 echo "mod $FILE_NAME;" >> ./src/leetcode_cn/mod.rs
+
+EDITOR=${EDITOR:-nvim}
+
+$EDITOR +6 ./src/leetcode_cn/$FILE_NAME.rs
