@@ -9,6 +9,18 @@ if [[ -z "$1" ]]; then
   exit 1
 fi
 
+# print help message
+if [[ "$1" == "help" ]]; then
+  echo "Help:"
+  echo "    This script try to help user generate the leetcode solution template"
+  echo
+  echo "Usage:"
+  echo "    $0 <problem name> [problem id]"
+  echo "    Problem name: The leetcode problem title"
+  echo "    Problem id: The leetcode problem id. Optional."
+  exit 0
+fi
+
 # get file name and substitute the - with _
 FILE_NAME=${1//-/_}
 
@@ -27,7 +39,13 @@ fn test() {
 }"
 
 # create new module
-echo -e "\nmod $FILE_NAME;" >> ./src/leetcode_cn/mod.rs
+if [[ -n "$2" ]]; then
+  # if the second argument is given, treat it as the leetcode problem number
+  echo "mod $FILE_NAME; // $2" >> ./src/leetcode_cn/mod.rs
+  sort -k 4n ./src/leetcode_cn/mod.rs
+else
+  echo -e "\nmod $FILE_NAME;" >> ./src/leetcode_cn/mod.rs
+fi
 
 # create new file
 echo "$TEMPLATE" > ./src/leetcode_cn/$FILE_NAME.rs
