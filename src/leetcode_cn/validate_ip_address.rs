@@ -8,19 +8,19 @@ impl Solution {
         if part.len() == 4 {
             return Self::handle_ipv4(&part);
         } else {
-            part = query_ip.split(":").collect();
+            part = query_ip.split(':').collect();
         }
 
         if part.len() == 8 {
-            return Self::handle_ipv6(&part);
+            Self::handle_ipv6(&part)
         } else {
-            return String::from("Neither");
+            String::from("Neither")
         }
     }
 
     fn handle_ipv4(part: &Vec<&str>) -> String {
         for pa in part {
-            if pa.len() < 1 || pa.len() > 3 {
+            if pa.is_empty() || pa.len() > 3 {
                 return String::from("Neither");
             }
             let chars: Vec<char> = pa.chars().collect();
@@ -31,7 +31,7 @@ impl Solution {
                 Ok(v) => v,
                 Err(_) => return String::from("Neither"),
             };
-            if val < 0 || val > 255 {
+            if !(0..=255).contains(&val) {
                 return String::from("Neither");
             }
         }
@@ -41,7 +41,7 @@ impl Solution {
 
     fn handle_ipv6(part: &Vec<&str>) -> String {
         for pa in part {
-            if pa.len() < 1 || pa.len() > 4 {
+            if pa.is_empty() || pa.len() > 4 {
                 return String::from("Neither");
             }
 

@@ -4,11 +4,11 @@ pub struct Vertex<T> {
 
 impl<T> Vertex<T> {
     pub fn new(data: T) -> Vertex<T> {
-        return Vertex { data };
+        Vertex { data }
     }
 
     pub fn data(&self) -> &T {
-        return &self.data;
+        &self.data
     }
 }
 
@@ -41,7 +41,7 @@ impl <Tv, Te: Copy> GraphMatrix<Tv, Te>{
     pub fn new() -> GraphMatrix<Tv, Te> {
         GraphMatrix {
             vertex_collect: Vec::new(),
-            edge_collect: Vec::from(Vec::new()),
+            edge_collect: Vec::new(),
         }
     }
 
@@ -66,7 +66,7 @@ impl <Tv, Te: Copy> GraphMatrix<Tv, Te>{
 
         self.edge_collect[i][j] = Some(edge);
 
-        return Ok(())
+        Ok(())
     }
 
     fn edge_exist(&self, i: usize, j: usize) -> bool {
