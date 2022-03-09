@@ -42,7 +42,7 @@ fn test() {
 if [[ -n "$2" ]]; then
   # if the second argument is given, treat it as the leetcode problem number
   echo "mod $FILE_NAME; // $2" >> ./src/leetcode_cn/mod.rs
-  sort -k 4n ./src/leetcode_cn/mod.rs
+  sort -k 4n ./src/leetcode_cn/mod.rs -o ./src/leetcode_cn/mod.rs
 else
   echo -e "\nmod $FILE_NAME;" >> ./src/leetcode_cn/mod.rs
 fi
