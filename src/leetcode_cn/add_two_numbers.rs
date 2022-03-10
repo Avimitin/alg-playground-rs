@@ -68,7 +68,7 @@ impl Solution {
               let val;
               sum = node.val + left;
               if sum > 9 {
-                left = sum % 10;
+                left = sum / 10;
                 val = sum - 10;
               } else {
                 left = 0;
