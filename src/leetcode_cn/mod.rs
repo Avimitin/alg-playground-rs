@@ -7,6 +7,7 @@ mod is_subsequence; // 392
 mod longest_repeating_character_replacement; // 424
 mod validate_ip_address; // 468
 mod delete_and_earn; // 740
+mod boats_to_save_people; // 881
 mod broken_calculator; // 991
 mod xor_queries_of_a_subarray; // 1310
 mod number_of_good_ways_to_split_a_string; // 1525
