@@ -1,4 +1,5 @@
 mod add_two_numbers; // 2
+mod palindrome_number; // 9
 mod rotate_image; // 48
 mod simplify_path; // 71
 mod remove_duplicates_from_sorted_list_ii; // 82
