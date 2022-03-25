@@ -5,15 +5,16 @@ impl Solution {
     #[allow(dead_code)]
     pub fn two_city_sched_cost(mut costs: Vec<Vec<i32>>) -> i32 {
         costs.sort_by(|a, b| (b[1] - b[0]).cmp(&(a[1] - a[0])));
-        let mut sums = 0;
-        for (i, pair) in costs.iter().enumerate() {
-            if i < costs.len() / 2 {
-                sums += pair[0];
+
+        let mut n = costs.len() / 2;
+        costs.iter().fold(0, |acc, x| {
+            if n > 0 {
+                n -= 1;
+                acc + x[0]
             } else {
-                sums += pair[1];
+                acc + x[1]
             }
-        }
-        sums
+        })
     }
 }
 
