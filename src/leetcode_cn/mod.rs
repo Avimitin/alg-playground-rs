@@ -8,6 +8,7 @@ mod is_subsequence; // 392
 mod longest_repeating_character_replacement; // 424
 mod validate_ip_address; // 468
 mod baseball_game; // 682
+mod binary_search; // 704
 mod delete_and_earn; // 740
 mod boats_to_save_people; // 881
 mod broken_calculator; // 991
