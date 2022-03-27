@@ -14,6 +14,7 @@ mod boats_to_save_people; // 881
 mod broken_calculator; // 991
 mod two_city_scheduling; // 1029
 mod xor_queries_of_a_subarray; // 1310
+mod the_k_weakest_rows_in_a_matrix; // 1337
 mod number_of_good_ways_to_split_a_string; // 1525
 mod latest_time_by_replacing_hidden_digits; // 1736
 mod minimum_changes_to_make_alternating_binary_string; // 1758
