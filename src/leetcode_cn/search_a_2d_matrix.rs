@@ -17,7 +17,7 @@ impl Solution {
             return false;
         }
         let row = &matrix[i];
-        Self::binary_search(&row, target, 0, row.len())
+        Self::binary_search(row, target, 0, row.len())
     }
 
     fn binary_search(v: &Vec<i32>, num: i32, mut lo: usize, mut hi: usize) -> bool {
