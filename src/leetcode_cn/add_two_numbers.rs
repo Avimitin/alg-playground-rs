@@ -64,9 +64,9 @@ impl Solution {
           match ptr2 {
             None => break,
             Some(node) => {
-              let sum;
+              
               let val;
-              sum = node.val + left;
+              let sum = node.val + left;
               if sum > 9 {
                 left = sum / 10;
                 val = sum - 10;
