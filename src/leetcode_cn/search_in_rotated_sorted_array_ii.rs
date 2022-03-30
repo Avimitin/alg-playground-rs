@@ -19,15 +19,13 @@ impl Solution {
         Self::binary_search(&nums, target, privot + 1, nums.len())
     }
 
-    fn binary_search(v: &Vec<i32>, target: i32, mut lo: usize, mut hi: usize) -> bool {
+    fn binary_search(v: &[i32], target: i32, mut lo: usize, mut hi: usize) -> bool {
         while lo < hi {
             let mid = (lo + hi) / 2;
-            if v[mid] == target {
-                return true;
-            } else if v[mid] < target {
-                lo = mid + 1;
-            } else {
-                hi = mid;
+            match v[mid] {
+                m if m == target => return true,
+                m if m < target => lo = mid + 1,
+                _ => hi = mid,
             }
         }
 
