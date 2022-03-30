@@ -5,6 +5,7 @@ mod simplify_path; // 71
 mod search_in_rotated_sorted_array_ii; // 81
 mod remove_duplicates_from_sorted_list_ii; // 82
 mod house_robber; // 198
+mod find_the_duplicate_number; // 287
 mod is_subsequence; // 392
 mod longest_repeating_character_replacement; // 424
 mod validate_ip_address; // 468
