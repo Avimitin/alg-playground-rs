@@ -20,8 +20,8 @@ impl Solution {
         let mut a = dp[0];
         let mut b = std::cmp::max(a, dp[1]);
 
-        for i in 2..10001 {
-            let c = std::cmp::max(b, a + dp[i]);
+        for i in dp.iter().take(10001).skip(2) {
+            let c = std::cmp::max(b, a + i);
             a = b;
             b = c;
         }
