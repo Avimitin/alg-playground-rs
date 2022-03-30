@@ -19,7 +19,7 @@ impl Solution {
                 // normal component just push it into result
                 _ => {
                     ans.push(part);
-                },
+                }
             }
         }
 
@@ -29,6 +29,9 @@ impl Solution {
 
 #[test]
 fn test() {
-    assert_eq!("/home/foo", Solution::simplify_path("/home//foo".to_string()));
+    assert_eq!(
+        "/home/foo",
+        Solution::simplify_path("/home//foo".to_string())
+    );
     assert_eq!("/", Solution::simplify_path("/../".to_string()));
 }

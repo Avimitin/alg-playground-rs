@@ -50,7 +50,7 @@ impl Solution {
 
         let mut ans = 0;
         for i in 1..n {
-            if left[i] == right[i+1] {
+            if left[i] == right[i + 1] {
                 ans += 1;
             }
         }

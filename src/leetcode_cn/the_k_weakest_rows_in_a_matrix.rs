@@ -11,9 +11,7 @@ impl Solution {
             rec.push(vec![i as i32, sum]);
         }
 
-        rec.sort_by(|a, b| {
-            a[1].cmp(&b[1])
-        });
+        rec.sort_by(|a, b| a[1].cmp(&b[1]));
 
         let mut ans = Vec::new();
         for i in 0..k as usize {
@@ -24,6 +22,4 @@ impl Solution {
 }
 
 #[test]
-fn test() {
-
-}
+fn test() {}

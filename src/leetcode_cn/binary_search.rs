@@ -8,7 +8,7 @@ impl Solution {
         let mut hi = nums.len() - 1;
 
         while lo <= hi {
-            let mid = (lo+hi)/2;
+            let mid = (lo + hi) / 2;
             if nums[mid] == target {
                 return mid as i32;
             } else if nums[mid] < target {

@@ -12,7 +12,7 @@ impl Solution {
                 "C" => {
                     let last = records.pop().unwrap();
                     sum -= last;
-                },
+                }
                 "D" => {
                     let cal = 2 * records.last().unwrap();
                     records.push(cal);

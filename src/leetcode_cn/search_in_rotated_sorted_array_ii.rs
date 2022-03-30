@@ -6,14 +6,14 @@ impl Solution {
     pub fn search(nums: Vec<i32>, target: i32) -> bool {
         let mut privot = 0;
         for i in 1..nums.len() {
-            if nums[i] < nums[i-1] {
+            if nums[i] < nums[i - 1] {
                 privot = i - 1;
                 break;
             }
         }
 
         if Self::binary_search(&nums, target, 0, privot + 1) {
-            return true
+            return true;
         }
 
         Self::binary_search(&nums, target, privot + 1, nums.len())
@@ -37,7 +37,7 @@ impl Solution {
 
 #[test]
 fn test() {
-    assert!(Solution::search(vec![2,5,6,0,0,1,2], 0));
-    assert!(!Solution::search(vec![2,5,6,0,0,1,2], 3));
-    assert!(Solution::search(vec![2,2,2,3,2,2,2], 3));
+    assert!(Solution::search(vec![2, 5, 6, 0, 0, 1, 2], 0));
+    assert!(!Solution::search(vec![2, 5, 6, 0, 0, 1, 2], 3));
+    assert!(Solution::search(vec![2, 2, 2, 3, 2, 2, 2], 3));
 }

@@ -25,9 +25,9 @@ impl Solution {
             i += 2;
         }
 
-        if {chars.len() % 2} != 0 {
-            ans_a += Self::cmp_add(chars[chars.len()-1], '0');
-            ans_b += Self::cmp_add(chars[chars.len()-1], '1');
+        if { chars.len() % 2 } != 0 {
+            ans_a += Self::cmp_add(chars[chars.len() - 1], '0');
+            ans_b += Self::cmp_add(chars[chars.len() - 1], '1');
         }
 
         std::cmp::min(ans_a, ans_b)

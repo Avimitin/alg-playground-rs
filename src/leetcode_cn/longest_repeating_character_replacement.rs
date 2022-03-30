@@ -23,12 +23,9 @@ impl Solution {
         let mut i = 0;
         let mut j = i + 1;
 
-        if chars[j] != pat {
-            
-        }
+        if chars[j] != pat {}
         // let now = Self::get(&alpha_met, chars[ptr]);
         // Self::set(&mut alpha_met, chars[ptr], now + 1);
-
 
         unimplemented!()
     }
@@ -40,5 +37,4 @@ fn test() {
     assert_eq!(4, Solution::character_replacement("AABABBA".to_string(), 1));
     assert_eq!(4, Solution::character_replacement("ABBB".to_string(), 2));
     assert_eq!(7, Solution::character_replacement("KRSCDCSONAJNHLBMDQGIFCPEKPOHQIHLTDIQGEKLRLCQNBOHNDQGHJPNDQPERNFSSSRDEQLFPCCCARFMDLHADJADAGNNSBNCJQOF".to_string(), 4))
-
 }

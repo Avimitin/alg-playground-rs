@@ -15,7 +15,7 @@ impl Solution {
         v.reverse();
         let sum = v.iter().fold(0, |acc, x| {
             let sum = acc + x * 10_i32.pow(i);
-            i+=1;
+            i += 1;
             sum
         });
 

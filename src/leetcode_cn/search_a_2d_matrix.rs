@@ -10,7 +10,7 @@ impl Solution {
             if (row[0]..=row[row.len() - 1]).contains(&target) {
                 break;
             }
-            i+=1;
+            i += 1;
         }
         // no row suitable for target
         if i == matrix.len() {
@@ -37,6 +37,4 @@ impl Solution {
 }
 
 #[test]
-fn test() {
-
-}
+fn test() {}
