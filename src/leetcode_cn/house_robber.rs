@@ -25,8 +25,8 @@ impl Solution {
         let mut a = nums[0];
         let mut b = max(a, nums[1]);
 
-        for i in 2..nums.len() {
-            let c = max(b, a + nums[i]);
+        for i in nums.iter().skip(2) {
+            let c = max(b, a + i);
             a = b;
             b = c;
         }
