@@ -18,7 +18,7 @@ impl Solution {
         }
     }
 
-    fn handle_ipv4(part: &Vec<&str>) -> String {
+    fn handle_ipv4(part: &[&str]) -> String {
         for pa in part {
             if pa.is_empty() || pa.len() > 3 {
                 return String::from("Neither");
@@ -39,7 +39,7 @@ impl Solution {
         String::from("IPv4")
     }
 
-    fn handle_ipv6(part: &Vec<&str>) -> String {
+    fn handle_ipv6(part: &[&str]) -> String {
         for pa in part {
             if pa.is_empty() || pa.len() > 4 {
                 return String::from("Neither");
