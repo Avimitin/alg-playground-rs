@@ -9,12 +9,10 @@ impl Solution {
 
         while lo <= hi {
             let mid = (lo + hi) / 2;
-            if nums[mid] == target {
-                return mid as i32;
-            } else if nums[mid] < target {
-                lo = mid + 1;
-            } else {
-                hi = mid;
+            match nums[mid] {
+                m if m == target => return mid as i32,
+                m if m < target => lo = mid,
+                _ => hi = mid,
             }
         }
 
