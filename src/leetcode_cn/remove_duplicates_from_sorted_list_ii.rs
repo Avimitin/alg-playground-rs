@@ -19,9 +19,7 @@ impl Solution {
     #[allow(dead_code)]
     pub fn delete_duplicates(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         // handle edge cases
-        if head.is_none() {
-            return None;
-        }
+        head.as_ref()?;
 
         let mut repeat = head.as_ref().unwrap().val - 1;
         let mut new_list = Some(Box::new(ListNode {
