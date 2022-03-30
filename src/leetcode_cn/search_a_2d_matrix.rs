@@ -20,15 +20,13 @@ impl Solution {
         Self::binary_search(row, target, 0, row.len())
     }
 
-    fn binary_search(v: &Vec<i32>, num: i32, mut lo: usize, mut hi: usize) -> bool {
+    fn binary_search(v: &[i32], num: i32, mut lo: usize, mut hi: usize) -> bool {
         while lo < hi {
             let mid = (lo + hi) / 2;
-            if v[mid] == num {
-                return true;
-            } else if v[mid] < num {
-                lo = mid + 1;
-            } else {
-                hi = mid;
+            match v[mid] {
+                m if m == num => return true,
+                m if m < num => lo = mid + 1,
+                _ => hi = mid,
             }
         }
 
