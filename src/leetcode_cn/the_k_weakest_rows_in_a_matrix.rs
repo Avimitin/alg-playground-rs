@@ -14,8 +14,8 @@ impl Solution {
         rec.sort_by(|a, b| a[1].cmp(&b[1]));
 
         let mut ans = Vec::new();
-        for i in 0..k as usize {
-            ans.push(rec[i][0])
+        for r in rec.iter().take(k as usize) {
+            ans.push(r[0])
         }
         ans
     }
