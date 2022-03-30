@@ -10,7 +10,7 @@ impl Solution {
 
         let mut ans = Vec::new();
 
-        for part in path.split("/") {
+        for part in path.split('/') {
             match part {
                 "." | "" => continue,
                 ".." => {
