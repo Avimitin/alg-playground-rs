@@ -8,6 +8,7 @@ mod search_in_rotated_sorted_array_ii; // 81
 mod remove_duplicates_from_sorted_list_ii; // 82
 mod house_robber; // 198
 mod find_the_duplicate_number; // 287
+mod reverse_string; // 344
 mod is_subsequence; // 392
 mod split_array_largest_sum; // 410
 mod longest_repeating_character_replacement; // 424
