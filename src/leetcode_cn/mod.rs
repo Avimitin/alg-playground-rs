@@ -11,7 +11,6 @@ mod find_the_duplicate_number; // 287
 mod reverse_string; // 344
 mod is_subsequence; // 392
 mod split_array_largest_sum; // 410
-mod longest_repeating_character_replacement; // 424
 mod validate_ip_address; // 468
 mod valid_palindrome_ii; // 680
 mod baseball_game; // 682
