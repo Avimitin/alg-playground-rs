@@ -24,8 +24,8 @@ impl Solution {
             if cs[lo] != cs[hi] {
                 return false;
             }
-            lo+=1;
-            hi-=1;
+            lo += 1;
+            hi -= 1;
         }
         true
     }
