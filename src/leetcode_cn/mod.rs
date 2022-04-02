@@ -13,6 +13,7 @@ mod is_subsequence; // 392
 mod split_array_largest_sum; // 410
 mod longest_repeating_character_replacement; // 424
 mod validate_ip_address; // 468
+mod valid_palindrome_ii; // 680
 mod baseball_game; // 682
 mod binary_search; // 704
 mod delete_and_earn; // 740
