@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "Format the code"
+cargo fmt
