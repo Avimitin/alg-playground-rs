@@ -1,6 +1,7 @@
 mod minimum_changes_to_make_alternating_binary_string;
 mod add_two_numbers; // 2
 mod palindrome_number; // 9
+mod next_permutation; // 31
 mod rotate_image; // 48
 mod simplify_path; // 71
 mod search_a_2d_matrix; // 74
