@@ -24,3 +24,5 @@ mod xor_queries_of_a_subarray; // 1310 // 1758
 mod the_k_weakest_rows_in_a_matrix; // 1337
 mod number_of_good_ways_to_split_a_string; // 1525
 mod latest_time_by_replacing_hidden_digits; // 1736
+
+mod container_with_most_water;
