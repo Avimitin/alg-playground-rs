@@ -1,6 +1,6 @@
 #[allow(dead_code)]
 struct KthLargest {
-    queue: Vec<i32>,
+    heap: Vec<i32>,
     cap: usize,
 }
 
@@ -13,7 +13,7 @@ impl KthLargest {
     fn new(k: i32, mut nums: Vec<i32>) -> Self {
         if nums.len() <= k as usize {
             return Self {
-                queue: {
+                heap: {
                     nums.sort_unstable();
                     nums
                 },
@@ -22,45 +22,49 @@ impl KthLargest {
         }
 
         // a array with k (-10^4 - 1) element
-        let mut kth = vec![-(10_i32.pow(4)) - 1; k as usize];
+        let mut kth = Self {
+            heap: vec![-(10_i32.pow(4)) - 1],
+            cap: k as usize,
+        };
+
         for n in nums {
-            Self::handle(&mut kth, n, k as usize);
+            kth.push(n);
         }
 
-        Self { queue: kth, cap: k as usize }
+        kth
     }
 
     #[allow(dead_code)]
     fn add(&mut self, val: i32) -> i32 {
-        Self::handle(&mut self.queue, val, self.cap);
-        self.queue[0]
+        self.push(val);
+        self.heap[0]
     }
 
     #[allow(dead_code)]
-    fn handle(v: &mut Vec<i32>, val: i32, cap: usize) {
-        if v.is_empty() || v.len() < cap {
-            let res = v.binary_search(&val);
+    fn push(&mut self, val: i32) {
+        if self.heap.is_empty() || self.heap.len() < self.cap {
+            let res = self.heap.binary_search(&val);
             match res {
-                Ok(i) => v.insert(i, val),
-                Err(i) => v.insert(i, val),
+                Ok(i) => self.heap.insert(i, val),
+                Err(i) => self.heap.insert(i, val),
             }
-        } else if val > v[v.len() - 1] {
-            v.remove(0);
-            v.push(val);
+        } else if val > self.heap[self.heap.len() - 1] {
+            self.heap.remove(0);
+            self.heap.push(val);
         } else {
-            let res = v.binary_search(&val);
+            let res = self.heap.binary_search(&val);
             match res {
                 Ok(i) => {
-                    v.remove(0);
-                    v.insert(i, val);
+                    self.heap.remove(0);
+                    self.heap.insert(i, val);
                 }
                 Err(i) => {
-                    if i == 0 && v[i] < val {
-                        v.remove(0);
-                        v.insert(0, val);
+                    if i == 0 && self.heap[i] < val {
+                        self.heap.remove(0);
+                        self.heap.insert(0, val);
                     } else if i != 0 {
-                        v.remove(0);
-                        v.insert(i - 1, val);
+                        self.heap.remove(0);
+                        self.heap.insert(i - 1, val);
                     }
                 }
             }
