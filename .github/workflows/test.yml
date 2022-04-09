@@ -1,0 +1,17 @@
+on: [push]
+name: Rust CI
+
+jobs:
+  test_alg:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - run: |
+        rustup component add clippy
+        cargo test
+        cargo check
+        cargo clippy
