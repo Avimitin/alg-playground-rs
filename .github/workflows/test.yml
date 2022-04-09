@@ -11,7 +11,7 @@ jobs:
         with:
           toolchain: stable
       - run: |
-        rustup component add clippy
-        cargo test
-        cargo check
-        cargo clippy
+          rustup component add clippy
+          cargo test
+          cargo check
+          cargo clippy
