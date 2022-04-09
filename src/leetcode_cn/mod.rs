@@ -10,6 +10,7 @@ mod remove_duplicates_from_sorted_list_ii; // 82
 mod house_robber; // 198
 mod find_the_duplicate_number; // 287
 mod reverse_string; // 344
+mod top_k_frequent_elements; // 347
 mod is_subsequence; // 392
 mod split_array_largest_sum; // 410
 mod validate_ip_address; // 468
