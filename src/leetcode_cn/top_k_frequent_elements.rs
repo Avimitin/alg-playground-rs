@@ -42,6 +42,6 @@ fn test() {
     assert_eq!(Solution::top_k_frequent(vec![-1, -1], 1), vec![-1]);
     assert_eq!(
         Solution::top_k_frequent(vec![1, 1, 1, 2, 2, 2, 3, 3, 3], 3),
-        vec![1, 2, 3]
+        vec![3, 2, 1]
     );
 }
