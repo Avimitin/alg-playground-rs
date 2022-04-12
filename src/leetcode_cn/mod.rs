@@ -9,6 +9,7 @@ mod search_in_rotated_sorted_array_ii; // 81
 mod remove_duplicates_from_sorted_list_ii; // 82
 mod house_robber; // 198
 mod find_the_duplicate_number; // 287
+mod game_of_life; // 289
 mod reverse_string; // 344
 mod top_k_frequent_elements; // 347
 mod is_subsequence; // 392
