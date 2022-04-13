@@ -57,13 +57,15 @@ impl Solution {
                     // 1. Any live cell with fewer than two live neighbors dies as if caused by under-population.
                     // 2. Any live cell with two or three live neighbors lives on to the next generation.
                     // 3. Any live cell with more than three live neighbors dies, as if by over-population.
-                    if live_neighbor < 2 || live_neighbor > 3 {
+                    if !(2..=3).contains(&live_neighbor) {
                         board[r][c] = -1;
                     }
                 }
             }
         }
 
+        // this is more readable
+        #[allow(clippy::needless_range_loop)]
         for i in 0..board.len() {
             for j in 0..board[i].len() {
                 if board[i][j] == -1 {
