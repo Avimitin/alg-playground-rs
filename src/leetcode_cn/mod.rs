@@ -3,6 +3,7 @@ mod container_with_most_water; // 7
 mod palindrome_number; // 9
 mod next_permutation; // 31
 mod rotate_image; // 48
+mod spiral_matrix_ii; // 59
 mod simplify_path; // 71
 mod search_a_2d_matrix; // 74
 mod search_in_rotated_sorted_array_ii; // 81
