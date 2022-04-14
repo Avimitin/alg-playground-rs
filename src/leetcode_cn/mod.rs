@@ -18,6 +18,7 @@ mod split_array_largest_sum; // 410
 mod validate_ip_address; // 468
 mod valid_palindrome_ii; // 680
 mod baseball_game; // 682
+mod search_in_a_binary_search_tree; // 700
 mod kth_largest_element_in_a_stream; // 703
 mod binary_search; // 704
 mod delete_and_earn; // 740
