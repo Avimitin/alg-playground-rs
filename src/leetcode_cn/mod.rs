@@ -16,6 +16,7 @@ mod top_k_frequent_elements; // 347
 mod is_subsequence; // 392
 mod split_array_largest_sum; // 410
 mod validate_ip_address; // 468
+mod trim_a_binary_search_tree; // 669
 mod valid_palindrome_ii; // 680
 mod baseball_game; // 682
 mod search_in_a_binary_search_tree; // 700
