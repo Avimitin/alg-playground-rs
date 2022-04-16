@@ -33,8 +33,8 @@ impl Solution {
 
 #[test]
 fn test() {
-    assert_eq!(Solution::valid_palindrome("abca".to_string()), true);
-    assert_eq!(Solution::valid_palindrome("aba".to_string()), true);
-    assert_eq!(Solution::valid_palindrome("abc".to_string()), false);
-    assert_eq!(Solution::valid_palindrome("deeee".to_string()), true);
+    assert!(Solution::valid_palindrome("abca".to_string()));
+    assert!(Solution::valid_palindrome("aba".to_string()));
+    assert!(Solution::valid_palindrome("abc".to_string()));
+    assert!(Solution::valid_palindrome("deeee".to_string()));
 }
