@@ -25,6 +25,7 @@ mod kth_largest_element_in_a_stream; // 703
 mod binary_search; // 704
 mod delete_and_earn; // 740
 mod boats_to_save_people; // 881
+mod increasing_order_search_tree; // 897
 mod broken_calculator; // 991
 mod two_city_scheduling; // 1029
 mod shift_2d_grid; // 1260
