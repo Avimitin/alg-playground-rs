@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 mod add_two_numbers; // 2
 mod container_with_most_water; // 7
 mod palindrome_number; // 9
@@ -9,6 +11,7 @@ mod search_a_2d_matrix; // 74
 mod search_in_rotated_sorted_array_ii; // 81
 mod remove_duplicates_from_sorted_list_ii; // 82
 mod recover_binary_search_tree; // 99
+mod binary_search_tree_iterator; // 173
 mod house_robber; // 198
 mod kth_smallest_element_in_a_bst; // 230
 mod find_the_duplicate_number; // 287

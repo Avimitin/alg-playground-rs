@@ -25,11 +25,10 @@ fi
 FILE_NAME=${1//-/_}
 
 # the leetcode solution template
-TEMPLATE="#[allow(dead_code)]
+TEMPLATE="
 struct Solution;
 
 impl Solution {
-    #[allow(dead_code)]
 
 }
 
