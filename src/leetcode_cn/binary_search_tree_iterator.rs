@@ -21,8 +21,7 @@ impl TreeNode {
 }
 
 struct BSTIterator {
-    st: Vec<i32>,
-    i: usize,
+    st: Vec<Rc<RefCell<TreeNode>>>,
 }
 
 /**
@@ -31,28 +30,26 @@ struct BSTIterator {
  */
 impl BSTIterator {
     fn new(root: Option<Rc<RefCell<TreeNode>>>) -> Self {
-        let mut bstit = Self {
-            st: Vec::new(),
-            i: 0,
-        };
+        let mut bstit = Self { st: Vec::new() };
         bstit.traverse(root);
         bstit
     }
 
-    fn traverse(&mut self, root: Option<Rc<RefCell<TreeNode>>>) -> Option<()> {
-        let node = root?;
-        self.traverse(node.borrow().left.clone());
-        self.st.push(node.borrow().val);
-        self.traverse(node.borrow().right.clone());
-        Some(())
+    fn traverse(&mut self, mut root: Option<Rc<RefCell<TreeNode>>>) {
+        while let Some(node) = root {
+            self.st.push(node.clone());
+            root = node.borrow().left.clone();
+        }
     }
 
     fn next(&mut self) -> i32 {
-        self.i += 1;
-        self.st[self.i - 1]
+        let node = self.st.pop().unwrap();
+        let x = node.borrow().val;
+        self.traverse(node.borrow().right.clone());
+        x
     }
 
     fn has_next(&mut self) -> bool {
-        self.i < self.st.len()
+        !self.st.is_empty()
     }
 }
