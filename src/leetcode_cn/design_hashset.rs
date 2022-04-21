@@ -1,5 +1,5 @@
 struct MyHashSet {
-    store: Vec<i32>,
+    store: Vec<bool>,
 }
 
 /**
@@ -8,23 +8,29 @@ struct MyHashSet {
  */
 impl MyHashSet {
     fn new() -> Self {
-        Self { store: Vec::new() }
+        Self {
+            store: vec![false; 1_000_000],
+        }
     }
 
     fn add(&mut self, key: i32) {
-        if let Err(i) = self.store.binary_search(&key) {
-            self.store.insert(i, key)
+        if let Some(val) = self.store.get_mut(key as usize) {
+            *val = true
         }
     }
 
     fn remove(&mut self, key: i32) {
-        if let Ok(i) = self.store.binary_search(&key) {
-            self.store.remove(i);
+        if let Some(val) = self.store.get_mut(key as usize) {
+            *val = false
         }
     }
 
     fn contains(&self, key: i32) -> bool {
-        self.store.binary_search(&key).is_ok()
+        if let Some(val) = self.store.get(key as usize) {
+            *val
+        } else {
+            false
+        }
     }
 }
 #[test]
